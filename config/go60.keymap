@@ -19,11 +19,13 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 // layers
-#define LAYER_Base 0
-#define LAYER_Keypad 1
-#define LAYER_SymbolNav 2
-#define LAYER_Magic 3
-#define LAYER_Factory 4
+#define DEFAULT 0
+#define SYMBOLS  1
+#define NAV 2
+#define LOWER 3
+#define ACCENT 4
+#define MAGIC 5
+#define LAYER_Factory 6
 
 / {
     input_processors {
@@ -88,14 +90,6 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&mo 3>, <&to 3>;
-        };
-        magic: magic_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MAGIC_HOLD_TAP";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&rgb_ug_status_macro>;
         };
         hmr: hmr {
             compatible = "zmk,behavior-hold-tap";

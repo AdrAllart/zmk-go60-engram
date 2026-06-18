@@ -105,6 +105,17 @@
             hold-trigger-key-positions = <5 6 7 8 9 16 17 18 19 20 21 28 29 30 31 32 33 40 41 42 43 44 45 57 58 59 55 56 54 52 53>;
             retro-tap;
         };
+        thumb_layers: thumb_layers {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_LAYERS";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            retro-tap;
+        };
         dot_excl: dot_excl {
             compatible = "zmk,behavior-mod-morph";
             label = "DOT_EXCL";

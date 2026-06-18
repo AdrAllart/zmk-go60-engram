@@ -13,6 +13,7 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/input_transform.h>
 #include <dt-bindings/zmk/pointing.h>
+#include "keys_fr_belgian.h"
 
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
@@ -118,40 +119,117 @@
                 = <&out OUT_BLE>,
                   <&bt BT_SEL 3>;
         };
+        thumb_layers: thumb_layers {
+            compatible = "zmk,behavior-hold-tap";
+            label = "THUMB_LAYERS";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            retro-tap;
+        };
+        dot_excl: dot_excl {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_EXCL";
+            bindings = <&kp FR_DOT>, <&kp FR_EXCL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        semicol_col: semicol_col {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SEMICOL_COL";
+            bindings = <&kp FR_SEMI>, <&kp FR_COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        slash_quest: slash_quest {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SLASH_QUEST";
+            bindings = <&kp FR_SLASH>, <&kp FR_QUESTION>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        quote_doubleq: quote_doubleq {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QUOTE_DOUBLEQ";
+            bindings = <&kp FR_SINGLE_QUOTE>, <&kp FR_DOUBLE_QUOTES>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        minus_unders: minus_unders {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MINUS_UNDERS";
+            bindings = <&kp FR_MINUS>, <&kp FR_UNDERSCORE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
-        layer_Base {
+
+        default_layer {
+            // ---------------------------------------------------------------------------------------------------------------------------------
+
+            // |  =    |  1  |  2  |  3   |  4   |  5   |                                                 |  6   |   7   |   8   |  9   |   0   |   -  |
+            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                                                 |  Y   |   U   |   I   |  O   |   P   |   \  |
+            // |  ESC  |  A  |  S  |  D   |  F   |  G   |                                                 |  H   |   J   |   K   |  L   |   ;   |   '  |
+            // |   `   |  Z  |  X  |  C   |  V   |  B   |                                                 |  N   |   M   |   ,   |  .   |   /   | PGUP |
+            //               | END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  O   | 
+
             bindings = <
-            &kp EQUAL  &kp N1     &kp N2   &kp N3    &kp N4  &kp N5                                                      &kp N6    &kp N7     &kp N8    &kp N9    &kp N0           &kp MINUS
-              &kp TAB   &kp Q      &kp W    &kp E     &kp R   &kp T                                                       &kp Y     &kp U      &kp I     &kp O     &kp P            &kp BSLH
-              &kp ESC   &kp A      &kp S    &kp D     &kp F   &kp G                                                       &kp H     &kp J      &kp K     &kp L  &kp SEMI             &kp SQT
- &magic LAYER_Magic 0   &kp Z      &kp X    &kp C     &kp V   &kp B                                                       &kp N     &kp M  &kp COMMA   &kp DOT  &kp FSLH          &keypad_td
-                               &kp GRAVE  &kp DEL  &kp BSPC                                                                      &kp LGUI   &kp LBKT  &kp RBKT
-                                                     &symbol_nav_td  &kp LSHFT  &kp LCTRL     &kp LALT  &kp SPACE  &mt RALT RET
+&kp EQUAL   &kp N1              &kp N2              &kp N3           &kp N4                &kp N5                                                                                                                                       &kp N6        &kp N7           &kp N8           &kp N9              &kp N0               &kp MINUS
+&kp TAB     &kp FR_B            &kp FR_Y            &kp FR_O         &kp FR_U              &quote_doubleq                                                                                                                               &semicol_col  &kp FR_L         &kp FR_D         &kp FR_W            &kp FR_V             &kp FR_Z
+&kp FR_X    &hml LEFT_WIN FR_C  &hml LEFT_ALT FR_I  &hml LCTRL FR_E  &hml LEFT_SHIFT FR_A  &kp FR_COMMA                                                                                                                                 &dot_excl     &hmr RSHFT FR_H  &hmr RCTRL FR_T  &hmr LEFT_ALT FR_S  &hmr RIGHT_WIN FR_N  &kp FR_Q
+&kp GRAVE   &kp FR_G            &sl 4               &kp FR_J         &kp FR_K              &minus_unders                                                                                                                                &slash_quest  &kp FR_R         &kp FR_M         &kp FR_F            &kp FR_P             &kp PG_UP
+                                &kp END             &kp LEFT         &kp FR_B                              &thumb_layers 2 BACKSPACE  &thumb_layers 3 DELETE  &kp LALT          &kp RALT    &thumb_layers 6 TAB  &thumb_layers 1 SPACE                &kp FR_V         &kp DOWN         &kp LBKT            
             >;
         };
 
-        layer_Keypad {
+        symbols {
             bindings = <
-                &none     &kp F1     &kp F2     &kp F3     &kp F4         &kp F5                                                 &kp F6     &kp F7      &kp F8        &kp F9          &kp F10        &kp F11
-               &trans      &none   &kp HOME     &kp UP    &kp END      &kp PG_UP                                              &kp KP_N7  &kp KP_N8   &kp KP_N9  &kp KP_MINUS     &kp KP_SLASH        &kp F12
-               &trans  &kp LC(Y)   &kp LEFT   &kp DOWN  &kp RIGHT      &kp PG_DN                                              &kp KP_N4  &kp KP_N5   &kp KP_N6   &kp KP_PLUS  &kp KP_MULTIPLY     &kp KP_NUM
- &magic LAYER_Magic 0  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(V))                                              &kp KP_N1  &kp KP_N2   &kp KP_N3  &kp KP_ENTER        &kp EQUAL &to LAYER_Base
-                                      &none     &trans     &trans                                                                        &kp KP_N0  &kp KP_DOT      &kp BSPC
-                                                             &mo LAYER_SymbolNav  &trans  &trans              &trans  &trans  &kp KP_N0
+&trans  &trans                    &trans                             &trans                           &trans                          &trans                                                          &trans            &trans                    &trans               &trans                  &trans                 &trans
+&trans  &type_dead FR_CARET       &kp FR_LESS_THAN                   &kp FR_GREATER_THAN              &kp FR_DOLLAR                   &kp FR_PERCENT                                                  &kp FR_AT         &kp FR_AMPERSAND          &kp FR_STAR          &type_dead FR_GRAVE     &kp FR_SQT             &trans
+&trans  &hml LEFT_WIN LEFT_BRACE  &hml LEFT_ALT FR_LEFT_PARENTHESIS  &hml LCTRL FR_RIGHT_PARENTHESIS  &hml LEFT_SHIFT FR_RIGHT_BRACE  &kp FR_SLASH                                                    &kp FR_BACKSLASH  &hmr RIGHT_SHIFT FR_PLUS  &hmr RCTRL FR_MINUS  &hmr LEFT_ALT FR_EQUAL  &hmr RIGHT_WIN FR_DQT  &trans
+&trans  &type_dead FR_TILDE       &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET             &kp FR_UNDER                    &kp FR_HASH                                                     &kp FR_PIPE       &kp FR_EXCLAMATION        &kp FR_SEMICOLON     &kp FR_COLON            &kp FR_EURO            &trans
+                                  &trans                             &trans                           &trans                                          &trans  &trans  &trans  &trans  &trans  &trans                    &trans                    &trans               &trans                  
             >;
         };
 
-        layer_SymbolNav {
+        nav {
             bindings = <
-              &kp INS    &kp F1     &kp F2    &kp F3     &kp F4     &kp F5                                       &kp F6    &kp F7           &kp F8       &kp F9          &kp F10    &kp F11
-             &kp SLCK  &kp EXCL   &kp HOME    &kp UP    &kp END  &kp PG_UP                                     &kp LPAR  &kp RPAR           &kp UP    &kp PRCNT        &kp K_APP    &kp F12
-             &kp CAPS    &kp AT   &kp LEFT  &kp DOWN  &kp RIGHT  &kp PG_DN                                     &kp DLLR  &kp LEFT         &kp DOWN    &kp RIGHT  &kp PAUSE_BREAK  &kp PSCRN
- &magic LAYER_Magic 0  &kp HASH   &kp LBKT  &kp RBKT   &kp LBRC   &kp RBRC                                     &kp AMPS  &kp STAR        &kp UNDER     &kp PLUS        &kp LSHFT  &kp LCTRL
-                                 &kp CARET    &trans     &trans                                                            &trans  &kp LC(LS(TAB))  &kp LC(TAB)
-                                                            &to LAYER_Base  &trans  &trans       &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans          &trans                                                        &trans  &trans          &trans        &trans          &trans     &trans
+&trans        &trans        &trans        &kp LC(FR_A)  &kp LC(FR_Z)    &kp LC(FR_Y)                                                  &trans  &kp LS(TAB)     &kp LC(FR_Z)  &kp LC(FR_Y)    &kp TAB    &trans
+&trans        &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT  &kp LC(FR_F)                                                  &trans  &kp LEFT_ARROW  &kp UP        &kp DOWN_ARROW  &kp RIGHT  &trans
+&kp LC(FR_L)  &kp LG(FR_V)  &kp LC(FR_X)  &kp LC(FR_C)  &kp LC(FR_V)    &none                                                         &trans  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END    &trans
+                            &trans        &trans        &trans                        &trans  &trans  &trans  &trans  &trans  &trans          &trans          &trans        &trans          
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+&trans        &none                 &none             &none          &none           &kp HOME                                                  &kp LPAR   &kp KP_NUM         &kp KP_EQUAL      &kp KP_DIVIDE        &kp KP_MULTIPLY         &kp PSCRN
+&trans        &none                 &kp F7            &kp F8         &kp F9          &kp F10                                                   &kp RPAR   &kp KP_N7          &kp KP_N8         &kp KP_N9            &kp KP_MINUS            &kp SLCK
+&trans        &hml LEFT_WIN DELETE  &hml LEFT_ALT F4  &hml LCTRL F5  &hml RSHIFT F6  &kp F11                                                   &kp PRCNT  &hmr RSHIFT KP_N4  &hmr RCTRL KP_N5  &hmr LEFT_ALT KP_N6  &hmr RIGHT_WIN KP_PLUS  &none
+&trans        &kp K_CMENU           &kp F1            &kp F2         &kp F3          &kp F12                                                   &kp COMMA  &kp KP_N1          &kp KP_N2         &kp KP_N3            &kp KP_ENTER            &trans
+                                    &kp INS           &kp F11        &kp F12                   &trans  &trans  &trans  &trans  &trans  &trans             &kp KP_N0          &kp KP_N0         &kp KP_DOT           
+            >;
+        };
+
+        accent {
+            bindings = <
+&trans  &trans            &trans             &trans             &trans             &trans                                                              &trans  &trans        &trans            &trans  &trans  &trans
+&trans  &trans            &trans             &caret_voyel FR_O  &caret_voyel FR_U  &kp FR_U_GRAVE                                                      &trans  &trans        &trans            &trans  &trans  &trans
+&trans  &trans            &caret_voyel FR_I  &caret_voyel FR_E  &caret_voyel FR_A  &kp FR_A_GRAVE                                                      &trans  &kp FR_CARET  &kp LS(FR_CARET)  &trans  &trans  &trans
+&trans  &kp FR_C_CEDILLA  &kp FR_CARET       &kp FR_E_ACUTE     &kp FR_E_GRAVE     &trans                                                              &trans  &trans        &trans            &trans  &trans  &trans
+                          &trans             &trans             &trans                             &trans  &trans  &trans  &trans  &trans  &kp FR_SQT          &trans        &trans            &trans  
             >;
         };
 

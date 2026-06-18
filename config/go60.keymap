@@ -182,57 +182,6 @@
                 = <&out OUT_BLE>,
                   <&bt BT_SEL 3>;
         };
-        thumb_layers: thumb_layers {
-            compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_LAYERS";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            flavor = "balanced";
-            retro-tap;
-        };
-        dot_excl: dot_excl {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DOT_EXCL";
-            bindings = <&kp FR_DOT>, <&kp FR_EXCL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        semicol_col: semicol_col {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SEMICOL_COL";
-            bindings = <&kp FR_SEMI>, <&kp FR_COLON>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        slash_quest: slash_quest {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SLASH_QUEST";
-            bindings = <&kp FR_SLASH>, <&kp FR_QUESTION>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        quote_doubleq: quote_doubleq {
-            compatible = "zmk,behavior-mod-morph";
-            label = "QUOTE_DOUBLEQ";
-            bindings = <&kp FR_SINGLE_QUOTE>, <&kp FR_DOUBLE_QUOTES>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        minus_unders: minus_unders {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MINUS_UNDERS";
-            bindings = <&kp FR_MINUS>, <&kp FR_UNDERSCORE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
         type_dead: type_dead {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;

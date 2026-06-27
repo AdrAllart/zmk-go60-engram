@@ -225,56 +225,56 @@
             //               | END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  O   | 
 
             bindings = <
-&kp FR_EQUAL    &kp N1              &kp N2              &kp N3           &kp N4                &kp N5                                                                                                                 &kp N6        &kp N7           &kp N8                  &kp N9              &kp N0               &kp MINUS
-&kp TAB         &kp FR_B            &kp FR_Y            &kp FR_O         &kp FR_U              &quote_doubleq                                                                                                         &semicol_col  &kp FR_L         &kp FR_D                &kp FR_W            &kp FR_V             &kp FR_Z
-&kp FR_X        &hml LEFT_WIN FR_C  &hml LEFT_ALT FR_I  &hml LCTRL FR_E  &hml LEFT_SHIFT FR_A  &kp FR_COMMA                                                                                                           &dot_excl     &hmr RSHFT FR_H  &hmr RCTRL FR_T         &hmr LEFT_ALT FR_S  &hmr RIGHT_WIN FR_N  &kp FR_Q
-&magic MAGIC 0  &kp FR_G            &sl 4               &kp FR_J         &kp FR_K              &minus_unders                                                                                                          &slash_quest  &kp FR_R         &kp FR_M                &kp FR_F            &kp FR_P             &kp PG_UP
-                                    &kp CAPSLOCK        &kp LEFT         &kp ESC                                                                                                                                                    &kp ENTER        &thumb_layers 3 DELETE  &kp LALT
-                                                                                                               &thumb_layers 2 BACKSPACE  &thumb_layers 3 DELETE  &kp ESC  &kp ENTER  &kp TAB  &thumb_layers 1 SPACE
+&kp FR_EQUAL  &kp N1              &kp N2              &kp N3           &kp N4                &kp N5                                                                                                                 &kp N6        &kp N7           &kp N8                  &kp N9              &kp N0               &kp MINUS
+&kp TAB       &kp FR_B            &kp FR_Y            &kp FR_O         &kp FR_U              &quote_doubleq                                                                                                         &semicol_col  &kp FR_L         &kp FR_D                &kp FR_W            &kp FR_V             &kp FR_Z
+&kp FR_X      &hml LEFT_WIN FR_C  &hml LEFT_ALT FR_I  &hml LCTRL FR_E  &hml LEFT_SHIFT FR_A  &kp FR_COMMA                                                                                                           &dot_excl     &hmr RSHFT FR_H  &hmr RCTRL FR_T         &hmr LEFT_ALT FR_S  &hmr RIGHT_WIN FR_N  &kp FR_Q
+&magic 5 0    &kp FR_G            &sl 4               &kp FR_J         &kp FR_K              &minus_unders                                                                                                          &slash_quest  &kp FR_R         &kp FR_M                &kp FR_F            &kp FR_P             &kp PG_UP
+                                  &kp CAPSLOCK        &kp LEFT         &kp ESC                                                                                                                                                    &kp ENTER        &thumb_layers 3 DELETE  &kp LALT
+                                                                                                             &thumb_layers 2 BACKSPACE  &thumb_layers 3 DELETE  &kp ESC  &kp ENTER  &kp TAB  &thumb_layers 1 SPACE
             >;
         };
 
         symbols {
             bindings = <
-&trans          &trans                       &trans                             &trans                           &trans                          &trans                                                          &trans            &trans                    &trans               &trans                  &trans                 &trans
-&trans          &type_dead FR_CARET          &kp FR_LESS_THAN                   &kp FR_GREATER_THAN              &kp FR_DOLLAR                   &kp FR_PERCENT                                                  &kp FR_AT         &kp FR_AMPERSAND          &kp FR_STAR          &type_dead FR_GRAVE     &kp FR_SQT             &trans
-&trans          &hml LEFT_WIN FR_LEFT_BRACE  &hml LEFT_ALT FR_LEFT_PARENTHESIS  &hml LCTRL FR_RIGHT_PARENTHESIS  &hml LEFT_SHIFT FR_RIGHT_BRACE  &kp FR_SLASH                                                    &kp FR_BACKSLASH  &hmr RIGHT_SHIFT FR_PLUS  &hmr RCTRL FR_MINUS  &hmr LEFT_ALT FR_EQUAL  &hmr RIGHT_WIN FR_DQT  &trans
-&magic MAGIC 0  &type_dead FR_TILDE          &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET             &kp FR_UNDER                    &kp FR_HASH                                                     &kp FR_PIPE       &kp FR_EXCLAMATION        &kp FR_SEMICOLON     &kp FR_COLON            &kp FR_EURO            &trans
-                                             &trans                             &trans                           &trans                                                                                                            &trans                    &trans               &trans
-                                                                                                                                                                 &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans                       &trans                             &trans                           &trans                          &trans                                                          &trans            &trans                    &trans               &trans                  &trans                 &trans
+&trans      &type_dead FR_CARET          &kp FR_LESS_THAN                   &kp FR_GREATER_THAN              &kp FR_DOLLAR                   &kp FR_PERCENT                                                  &kp FR_AT         &kp FR_AMPERSAND          &kp FR_STAR          &type_dead FR_GRAVE     &kp FR_SQT             &trans
+&trans      &hml LEFT_WIN FR_LEFT_BRACE  &hml LEFT_ALT FR_LEFT_PARENTHESIS  &hml LCTRL FR_RIGHT_PARENTHESIS  &hml LEFT_SHIFT FR_RIGHT_BRACE  &kp FR_SLASH                                                    &kp FR_BACKSLASH  &hmr RIGHT_SHIFT FR_PLUS  &hmr RCTRL FR_MINUS  &hmr LEFT_ALT FR_EQUAL  &hmr RIGHT_WIN FR_DQT  &trans
+&magic 5 0  &type_dead FR_TILDE          &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET             &kp FR_UNDER                    &kp FR_HASH                                                     &kp FR_PIPE       &kp FR_EXCLAMATION        &kp FR_SEMICOLON     &kp FR_COLON            &kp FR_EURO            &trans
+                                         &trans                             &trans                           &trans                                                                                                            &trans                    &trans               &trans
+                                                                                                                                                             &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         nav {
             bindings = <
-&trans          &trans        &trans        &trans        &trans          &trans                                                        &trans  &trans          &trans        &trans          &trans     &trans
-&trans          &trans        &trans        &kp LC(FR_A)  &kp LC(FR_Z)    &kp LC(FR_Y)                                                  &trans  &kp LS(TAB)     &kp LC(FR_Z)  &kp LC(FR_Y)    &kp TAB    &trans
-&trans          &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT  &kp LC(FR_F)                                                  &trans  &kp LEFT_ARROW  &kp UP        &kp DOWN_ARROW  &kp RIGHT  &trans
-&magic MAGIC 0  &kp LG(FR_V)  &kp LC(FR_X)  &kp LC(FR_C)  &kp LC(FR_V)    &none                                                         &trans  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END    &trans
-                              &trans        &trans        &trans                                                                                &trans          &trans        &trans
-                                                                                        &trans  &trans  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans          &trans                                                        &trans  &trans          &trans        &trans          &trans     &trans
+&trans      &trans        &trans        &kp LC(FR_A)  &kp LC(FR_Z)    &kp LC(FR_Y)                                                  &trans  &kp LS(TAB)     &kp LC(FR_Z)  &kp LC(FR_Y)    &kp TAB    &trans
+&trans      &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL     &kp LEFT_SHIFT  &kp LC(FR_F)                                                  &trans  &kp LEFT_ARROW  &kp UP        &kp DOWN_ARROW  &kp RIGHT  &trans
+&magic 5 0  &kp LG(FR_V)  &kp LC(FR_X)  &kp LC(FR_C)  &kp LC(FR_V)    &none                                                         &trans  &kp HOME        &kp PAGE_UP   &kp PAGE_DOWN   &kp END    &trans
+                          &trans        &trans        &trans                                                                                &trans          &trans        &trans
+                                                                                    &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         lower_layer {
             bindings = <
-&trans          &none                 &none             &none          &none           &kp HOME                                                            &kp LPAR   &kp KP_NUM         &kp KP_EQUAL      &kp KP_DIVIDE        &kp KP_MULTIPLY         &kp PSCRN
-&trans          &none                 &kp F7            &kp F8         &kp F9          &kp F10                                                             &kp RPAR   &kp KP_N7          &kp KP_N8         &kp KP_N9            &kp KP_MINUS            &kp SLCK
-&trans          &hml LEFT_WIN DELETE  &hml LEFT_ALT F4  &hml LCTRL F5  &hml RSHIFT F6  &kp F11                                                             &kp PRCNT  &hmr RSHIFT KP_N4  &hmr RCTRL KP_N5  &hmr LEFT_ALT KP_N6  &hmr RIGHT_WIN KP_PLUS  &none
-&magic MAGIC 0  &kp K_CMENU           &kp F1            &kp F2         &kp F3          &kp F12                                                             &kp COMMA  &kp KP_N1          &kp KP_N2         &kp KP_N3            &kp KP_ENTER            &trans
-                                      &kp INS           &kp F11        &kp F12                                                                                        &trans             &trans            &trans
-                                                                                                 &trans  &trans  &trans  &kp KP_N0  &kp KP_N0  &kp KP_DOT
+&trans      &none                 &none             &none          &none           &kp HOME                                                  &kp LPAR   &kp KP_NUM         &kp KP_EQUAL      &kp KP_DIVIDE        &kp KP_MULTIPLY         &kp PSCRN
+&trans      &none                 &kp F7            &kp F8         &kp F9          &kp F10                                                   &kp RPAR   &kp KP_N7          &kp KP_N8         &kp KP_N9            &kp KP_MINUS            &kp SLCK
+&trans      &hml LEFT_WIN DELETE  &hml LEFT_ALT F4  &hml LCTRL F5  &hml RSHIFT F6  &kp F11                                                   &kp PRCNT  &hmr RSHIFT KP_N4  &hmr RCTRL KP_N5  &hmr LEFT_ALT KP_N6  &hmr RIGHT_WIN KP_PLUS  &none
+&magic 5 0  &kp K_CMENU           &kp F1            &kp F2         &kp F3          &kp F12                                                   &kp COMMA  &kp KP_N1          &kp KP_N2         &kp KP_N3            &kp KP_ENTER            &trans
+                                  &kp INS           &kp F11        &kp F12                                                                              &kp KP_NUMBER_0    &kp KP_DOT        &trans
+                                                                                             &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         accent {
             bindings = <
-&trans          &trans            &trans             &trans             &trans             &trans                                                              &trans  &trans        &trans            &trans  &trans  &trans
-&trans          &trans            &trans             &caret_voyel FR_O  &caret_voyel FR_U  &kp FR_U_GRAVE                                                      &trans  &trans        &trans            &trans  &trans  &trans
-&trans          &trans            &caret_voyel FR_I  &caret_voyel FR_E  &caret_voyel FR_A  &kp FR_A_GRAVE                                                      &trans  &kp FR_CARET  &kp LS(FR_CARET)  &trans  &trans  &trans
-&magic MAGIC 0  &kp FR_C_CEDILLA  &kp FR_CARET       &kp FR_E_ACUTE     &kp FR_E_GRAVE     &trans                                                              &trans  &trans        &trans            &trans  &trans  &trans
-                                  &trans             &trans             &trans                                                                                         &trans        &trans            &trans
-                                                                                                           &trans  &trans  &kp FR_SQT  &trans  &trans  &trans
+&trans      &trans            &trans             &trans             &trans             &trans                                                              &trans  &trans        &trans            &trans  &trans  &trans
+&trans      &trans            &trans             &caret_voyel FR_O  &caret_voyel FR_U  &kp FR_U_GRAVE                                                      &trans  &trans        &trans            &trans  &trans  &trans
+&trans      &trans            &caret_voyel FR_I  &caret_voyel FR_E  &caret_voyel FR_A  &kp FR_A_GRAVE                                                      &trans  &kp FR_CARET  &kp LS(FR_CARET)  &trans  &trans  &trans
+&magic 5 0  &kp FR_C_CEDILLA  &kp FR_CARET       &kp FR_E_ACUTE     &kp FR_E_GRAVE     &trans                                                              &trans  &trans        &trans            &trans  &trans  &trans
+                              &trans             &trans             &trans                                                                                         &trans        &trans            &trans
+                                                                                                       &trans  &trans  &kp FR_SQT  &trans  &trans  &trans
             >;
         };
 
@@ -283,7 +283,7 @@
 &bt BT_CLR   &kp C_BRI_DN     &kp C_BRI_UP     &kp C_PREV       &kp C_NEXT       &kp C_PP                                                   &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none  &bt BT_CLR_ALL
 &bootloader  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                            &none       &none         &none         &none  &none  &bootloader
 &sys_reset   &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                            &none       &none         &none         &none  &none  &sys_reset
-&none        &none            &bt_0            &bt_1            &bt_2            &bt_3                                                      &none       &none         &none         &none  &none  &to LAYER_Factory
+&none        &none            &bt_0            &bt_1            &bt_2            &bt_3                                                      &none       &none         &none         &none  &none  &to 6
                               &out OUT_USB     &none            &none                                                                                   &none         &none         &none
                                                                                                   &none  &none  &none  &none  &none  &none
             >;

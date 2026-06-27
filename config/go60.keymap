@@ -133,7 +133,7 @@
         semicol_col: semicol_col {
             compatible = "zmk,behavior-mod-morph";
             label = "SEMICOL_COL";
-            bindings = <&kp FR_SEMI>, <&kp FR_COLON>;
+            bindings = <&kp FR_COLON>, <&kp FR_SEMICOLON>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -237,7 +237,7 @@
         symbols {
             bindings = <
 &trans      &trans                       &trans                             &trans                           &trans                          &trans                                                          &trans            &trans                    &trans               &trans                  &trans                 &trans
-&trans      &type_dead FR_CARET          &kp FR_LESS_THAN                   &kp FR_GREATER_THAN              &kp FR_DOLLAR                   &kp FR_PERCENT                                                  &kp FR_AT         &kp FR_AMPERSAND          &kp FR_STAR          &type_dead FR_GRAVE     &kp FR_SQT             &trans
+&trans      &type_dead FR_CARET          &kp FR_LESS_THAN                   &kp FR_GREATER_THAN              &kp FR_DOLLAR                   &kp FR_PERCENT                                                  &kp FR_AT         &kp FR_AMPERSAND          &kp FR_STAR          &kp FR_GRAVE            &kp FR_SQT             &trans
 &trans      &hml LEFT_WIN FR_LEFT_BRACE  &hml LEFT_ALT FR_LEFT_PARENTHESIS  &hml LCTRL FR_RIGHT_PARENTHESIS  &hml LEFT_SHIFT FR_RIGHT_BRACE  &kp FR_SLASH                                                    &kp FR_BACKSLASH  &hmr RIGHT_SHIFT FR_PLUS  &hmr RCTRL FR_MINUS  &hmr LEFT_ALT FR_EQUAL  &hmr RIGHT_WIN FR_DQT  &trans
 &magic 5 0  &type_dead FR_TILDE          &kp FR_LEFT_BRACKET                &kp FR_RIGHT_BRACKET             &kp FR_UNDER                    &kp FR_HASH                                                     &kp FR_PIPE       &kp FR_EXCLAMATION        &kp FR_SEMICOLON     &kp FR_COLON            &kp FR_EURO            &trans
                                          &trans                             &trans                           &trans                                                                                                            &trans                    &trans               &trans
@@ -269,12 +269,12 @@
 
         accent {
             bindings = <
-&trans      &trans            &trans             &trans             &trans             &trans                                                              &trans  &trans        &trans            &trans  &trans  &trans
-&trans      &trans            &trans             &caret_voyel FR_O  &caret_voyel FR_U  &kp FR_U_GRAVE                                                      &trans  &trans        &trans            &trans  &trans  &trans
-&trans      &trans            &caret_voyel FR_I  &caret_voyel FR_E  &caret_voyel FR_A  &kp FR_A_GRAVE                                                      &trans  &kp FR_CARET  &kp LS(FR_CARET)  &trans  &trans  &trans
-&magic 5 0  &kp FR_C_CEDILLA  &kp FR_CARET       &kp FR_E_ACUTE     &kp FR_E_GRAVE     &trans                                                              &trans  &trans        &trans            &trans  &trans  &trans
-                              &trans             &trans             &trans                                                                                         &trans        &trans            &trans
-                                                                                                       &trans  &trans  &kp FR_SQT  &trans  &trans  &trans
+&trans      &trans            &trans             &trans              &trans             &trans                                                                  &trans  &trans        &trans            &trans  &trans  &trans
+&trans      &trans            &trans             &caret_voyel FR_O   &caret_voyel FR_U  &kp FR_U_GRAVE                                                          &trans  &trans        &trans            &trans  &trans  &trans
+&trans      &trans            &caret_voyel FR_I  &caret_voyel FR_E   &caret_voyel FR_A  &kp FR_A_GRAVE                                                          &trans  &kp FR_CARET  &kp LS(FR_CARET)  &trans  &trans  &trans
+&magic 5 0  &kp FR_C_CEDILLA  &kp FR_CARET       &kp FR_E_ACUTE      &kp FR_E_GRAVE     &kp LS(FR_A_GRAVE)                                                      &trans  &trans        &trans            &trans  &trans  &trans
+                              &trans             &kp LS(FR_E_ACUTE)  &trans                                                                                             &trans        &trans            &trans
+                                                                                                            &trans  &trans  &kp FR_SQT  &trans  &trans  &trans
             >;
         };
 
